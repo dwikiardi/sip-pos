@@ -69,9 +69,11 @@ class StaffController extends Controller
                 $img->save($save_path . '/' . $filenametostore);
 
                 $userData['image'] = $save_path . '/' . $filenametostore;
+            } else {
+                $userData['image'] = 'assets/media/users/default.png';
             }
 
-            $user = User::create($userData);
+            User::create($userData);
 
             return response()->json([
                 'status' => 'success',

@@ -30,7 +30,8 @@ class StaffRequest extends FormRequest
 
         if (!Request::instance()->has('id')) {
             $rules += [
-                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+                // 'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
                 'password' => 'required|min:8',
                 'confirmation_password' => 'nullable',
                 'new_password' => 'nullable',
