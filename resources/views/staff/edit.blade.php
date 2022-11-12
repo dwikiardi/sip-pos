@@ -11,33 +11,9 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <input type="hidden" name="user_id" id="user_id" value="{{$staff->user_id}}">
-                    <label for="name">Nama</label>
-                    <input type="text" class="form-control name" name="name" id="name" placeholder="masukkan nama" value="{{$staff->name}}">
-                    <div class="invalid-feedback error-name"></div>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Jenis Kelamin</label>
-                    <select name="gender" id="gender" class="form-control gender">
-                        <option value="">Pilih jenis kelamin...</option>
-                        <option value="1" {{$staff->gender == 1 ? 'selected' : ''}}>Laki - Laki</option>
-                        <option value="0" {{$staff->gender == 0 ? 'selected' : ''}}>Perempuan</option>
-                    </select>
-                    <div class="invalid-feedback error-gender"></div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">No. Telp</label>
-                    <input type="text" class="form-control phone" name="phone" id="phone" placeholder="masukkan no. telp" value="{{$staff->phone}}">
-                    <div class="invalid-feedback error-phone"></div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Alamat</label>
-                    <textarea name="address" id="address" class="form-control address" rows="6">{{$staff->address}}</textarea>
-                    <div class="invalid-feedback error-address"></div>
-                </div>
-                <div class="form-group">
+                    <input type="hidden" name="id" id="id" class="form-control" value="{{$user->id}}">
                     <label for="user">Username</label>
-                    <input type="text" class="form-control user" name="user" id="user" placeholder="masukkan username" value="{{$staff->user->username}}">
+                    <input type="text" class="form-control user" name="user" id="user" placeholder="masukkan username" value="{{$user->username}}">
                     <div class="invalid-feedback error-user"></div>
                 </div>
                 <div class="form-group">

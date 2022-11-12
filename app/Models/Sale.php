@@ -11,14 +11,9 @@ class Sale extends Model
 
     protected $guarded = ['id'];
 
-    public function member()
+    public function user()
     {
-        return $this->belongsTo(Member::class, 'member_id', 'id');
-    }
-
-    public function staff()
-    {
-        return $this->belongsTo(Staff::class, 'staff_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function detail()

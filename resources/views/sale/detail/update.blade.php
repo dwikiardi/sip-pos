@@ -3,8 +3,6 @@
         <th>No</th>
         <th>Kode Transaksi</th>
         <th>Staff</th>
-        <th>Member</th>
-        <th>Discount</th>
         <th>Total</th>
         <th>Tanggal Transaksi</th>
     </thead>
@@ -13,9 +11,7 @@
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$data->transaction_code}}</td>
-                <td>{{$data->staff->name}}</td>
-                <td>{{$data->member_id != null ? $data->member->name : '-'}}</td>
-                <td>{{$data->discount}}%</td>
+                <td>{{$data->user->username}}</td>
                 <td>{{convertToRupiah($data->total)}}</td>
                 <td>{{$data->sale_date}}</td>
             </tr>

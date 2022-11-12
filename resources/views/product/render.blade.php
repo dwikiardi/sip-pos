@@ -17,7 +17,6 @@
                 <th>Harga Produk</th>
                 <th>Foto</th>
                 <th>Stok</th>
-                <th>Produk Reject</th>
                 @can('adminAndStaff')
                 <th>Aksi</th>
                 @endcan
@@ -32,7 +31,6 @@
                             <img src="{{asset($product->image)}}" width="70px">
                         </td>
                         <td>{{$product->attribute != null ? $product->attribute->stock : 0}}</td>
-                        <td>{{$product->attribute != null ? $product->attribute->product_rejected : 0}}</td>
                         @can('adminAndStaff')
                         <td>
                             <button class="btn btn-info btn-edit" data-id="{{$product->id}}">

@@ -51,7 +51,7 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-5 col-lg-6 col-md-8 px-5">
                             <h1 class="text-white">Welcome!</h1>
-                            <p class="text-lead text-white">Sistem Informasi Penjualan PT. Mesari Adi Harsa</p>
+                            <p class="text-lead text-white">Sistem Informasi Penjualan Koperasi SD N 3 Saba</p>
                         </div>
                     </div>
                 </div>

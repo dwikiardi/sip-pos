@@ -311,9 +311,8 @@ $(document).ready(function () {
             if (result.value) {
                 var formData = new FormData();
                 formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-                formData.append('total', $('body .total-price').text().replace(/[^0-9]/g,''));
-                formData.append('discount', $('body .total-discount').text().replace(/[^0-9]/g,''));
-                formData.append('member_id', $('body #member_id').val());
+                formData.append('total', $('body .totalprice').text().replace(/[^0-9]/g,''));
+                formData.append('date', $('body .date').val());
                 $.ajax({
                     url: '/cart/checkout',
                     type: 'POST',

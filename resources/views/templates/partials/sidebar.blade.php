@@ -36,26 +36,20 @@
                             class="side-menu__label">Produk</span>
                     </a>
                 </li>
+                @can('admin')
                 <li class="slide"> 
                     <a class="side-menu__item has-link {{Request::is('staff') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('staff.index')}}"><i class="side-menu__icon fe fe-users"></i><span
                             class="side-menu__label">Staff</span>
                     </a>
                 </li>
-                <li class="slide"> 
-                    <a class="side-menu__item has-link {{Request::is('member') ? 'active' : '' }}" data-bs-toggle="slide"
-                        href="{{route('member.index')}}"><i class="side-menu__icon fe fe-user"></i><span
-                            class="side-menu__label">Member</span>
-                    </a>
-                </li>
-                @can('staff')
+                @endcan
                 <li class="slide"> 
                     <a class="side-menu__item has-link {{Request::is('sale') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('sale.index')}}"><i class="side-menu__icon fe fe-shopping-bag"></i><span
                             class="side-menu__label">Transaksi</span>
                     </a>
                 </li>
-                @endcan
                 <li class="slide"> 
                     <a class="side-menu__item has-link {{Request::is('sale/detail') ? 'active' : '' }}" data-bs-toggle="slide"
                         href="{{route('sale.detail')}}"><i class="side-menu__icon fe fe-shopping-cart"></i><span

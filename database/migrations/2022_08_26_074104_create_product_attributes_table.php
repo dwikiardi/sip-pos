@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('stock');
-            $table->integer('product_rejected');
             $table->timestamps();
         });
     }

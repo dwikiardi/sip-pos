@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Main;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StaffRequest;
 use App\Models\Role;
-use App\Models\Staff;
 use App\Models\User;
 use Image;
 use Illuminate\Http\Request;
@@ -20,10 +19,11 @@ class StaffController extends Controller
 
     public function render() 
     {
-        $staff = Staff::all();
+        $role = Role::where('name', 'Staff')->first();
+        $user = User::where('role_id', $role->id)->get();
         $view = [
             'data' => view('staff.render')->with([
-                'staff' => $staff
+                'user' => $user
             ])->render()
         ];
 
@@ -73,16 +73,6 @@ class StaffController extends Controller
 
             $user = User::create($userData);
 
-            $data = [
-                'user_id' => $user->id,
-                'name' => $request->name,
-                'gender' => $request->gender,
-                'phone' => $request->phone,
-                'address' => $request->address,
-            ];
-
-            Staff::create($data);
-
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data berhasil tersimpan',
@@ -101,10 +91,10 @@ class StaffController extends Controller
 
     public function edit($id) 
     {
-        $staff = Staff::with('user')->where('id', $id)->first();
+        $user = User::find($id);
         
         $view = [
-            'data' => view('staff.edit', compact('staff'))->render()
+            'data' => view('staff.edit', compact('user'))->render()
         ];
 
         return response()->json($view);
@@ -113,7 +103,7 @@ class StaffController extends Controller
     public function update(StaffRequest $request)
     {
         try {
-            $user = User::find($request->user_id);
+            $user = User::find($request->id);
             $userData = [
                 'username' => $request->user,
                 // 'password' => bcrypt($request->password),
@@ -163,15 +153,6 @@ class StaffController extends Controller
 
             $user->update($userData);
 
-            $data = [
-                'name' => $request->name,
-                'gender' => $request->gender,
-                'phone' => $request->phone,
-                'address' => $request->address,
-            ];
-
-            Staff::where('user_id', $request->user_id)->update($data);
-
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data berhasil tersimpan',
@@ -191,9 +172,9 @@ class StaffController extends Controller
     public function delete($id)
     {
         try {
-            $staff = Staff::find($id);
-            unlink($staff->user->image);
-            $staff->delete();
+            $user = User::find($id);
+            unlink($user->image);
+            $user->delete();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data berhasil dihapus',

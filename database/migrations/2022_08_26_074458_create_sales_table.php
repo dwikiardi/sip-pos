@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->char('transaction_code', 25);
-            $table->foreignId('staff_id')->references('id')->on('staff')->onDelete('cascade');
-            $table->foreignId('member_id')->nullable()->references('id')->on('members');
-            $table->integer('discount')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('total');
             $table->date('sale_date');
             $table->timestamps();

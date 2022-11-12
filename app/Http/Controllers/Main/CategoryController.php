@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Main;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
-use App\Models\Staff;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller

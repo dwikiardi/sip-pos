@@ -25,14 +25,10 @@ class StaffRequest extends FormRequest
     public function rules()
     {
         $rules =  [
-            'name' => 'required',
-            'gender' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
             'user' => 'required',
         ];
 
-        if (!Request::instance()->has('user_id')) {
+        if (!Request::instance()->has('id')) {
             $rules += [
                 'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
                 'password' => 'required|min:8',
@@ -42,7 +38,7 @@ class StaffRequest extends FormRequest
             ];
         } else {
             $rules += [
-                'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'password' => 'nullable',
                 'current_password' => 'min:8|nullable',
                 'new_password' => 'min:8|same:confirmation_password|nullable',

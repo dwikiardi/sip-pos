@@ -13,10 +13,6 @@
         <table class="table table-stripped" id="tableData">
             <thead>
                 <th>No</th>
-                <th>Nama</th>
-                <th>Jenis Kelamin</th>
-                <th>No. Telp</th>
-                <th>Alamat</th>
                 <th>Username</th>
                 <th>Foto</th>
                 @can('admin')
@@ -24,23 +20,19 @@
                 @endcan
             </thead>
             <tbody>
-                @foreach ($staff as $staff)
+                @foreach ($user as $user)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$staff->name}}</td>
-                        <td>{{$staff->gender == 1 ? 'Laki - Laki' : 'Perempuan'}}</td>
-                        <td>{{$staff->phone}}</td>
-                        <td>{{$staff->address}}</td>
-                        <td>{{$staff->user->username}}</td>
+                        <td>{{$user->username}}</td>
                         <td>
-                            <img src="{{asset($staff->user->image)}}" width="70px">
+                            <img src="{{asset($user->image)}}" width="70px">
                         </td>
                         @can('admin')
                         <td>
-                            <button class="btn btn-info btn-edit" data-id="{{$staff->id}}">
+                            <button class="btn btn-info btn-edit" data-id="{{$user->id}}">
                                 <i class="fa fa-pencil"></i>
                             </button>
-                            {{-- <button class="btn btn-danger btn-delete" data-id="{{$staff->id}}">
+                            {{-- <button class="btn btn-danger btn-delete" data-id="{{$user->id}}">
                                 <i class="fa fa-trash"></i>
                             </button> --}}
                         </td>

@@ -9,7 +9,7 @@
 @section('content')
 <div class="row printableArea">
     <div class="col-md-12" style="text-align: center">
-        <h2><strong>PT. Mesari Adi Harsa</strong></h2>
+        <h2><strong>Koperasi SD N 3 Saba</strong></h2>
         <h3>
             <b>Laporan Data Transaksi</b>
         </h3>
@@ -37,8 +37,6 @@
                         <th>No</th>
                         <th>Kode Transaksi</th>
                         <th>Staff</th>
-                        <th>Member</th>
-                        <th>Diskon</th>
                         <th>Tanggal Transaksi</th>
                         <th>Detail Transaksi</th>
                         <th>Total Transaksi</th>
@@ -47,9 +45,7 @@
                         <tr>
                             <td class="align-middle">{{$loop->iteration}}</td>
                             <td class="align-middle">{{$data->transaction_code}}</td>
-                            <td class="align-middle">{{$data->staff->name}}</td>
-                            <td class="align-middle">{{$data->member == null ? '-' : $data->member->name}}</td>
-                            <td class="align-middle">{{$data->discount}}%</td>
+                            <td class="align-middle">{{$data->user->username}}</td>
                             <td class="align-middle">{{$data->sale_date}}</td>
                             <td>
                                 <table class="table no-borderless">

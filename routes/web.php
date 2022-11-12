@@ -41,16 +41,6 @@ Route::middleware('auth')->namespace('Main')->group(function() {
         Route::get('/delete/{id}', 'ProductController@delete')->name('delete');
     });
 
-    Route::prefix('/member')->name('member.')->group(function() {
-        Route::get('/', 'MemberController@index')->name('index');
-        Route::get('/render', 'MemberController@render')->name('render');
-        Route::get('/create', 'MemberController@create')->name('create');
-        Route::post('/store', 'MemberController@store')->name('store');
-        Route::get('/edit/{id}', 'MemberController@edit')->name('edit');
-        Route::post('/update', 'MemberController@update')->name('update');
-        Route::get('/delete/{id}', 'MemberController@delete')->name('delete');
-    });
-
     Route::prefix('/staff')->name('staff.')->group(function() {
         Route::get('/', 'StaffController@index')->name('index');
         Route::get('/render', 'StaffController@render')->name('render');

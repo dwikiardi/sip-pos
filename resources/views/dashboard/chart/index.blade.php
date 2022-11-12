@@ -3,8 +3,12 @@
 </div>
 
 <div class="card-footer">
+    {{-- <h4>
+        Dari grafik diatas dapat disimpulkan produk yang terjual paling banyak pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $tertinggiProduk . '</strong>' !!} dengan total penjualan {!! '<strong>' . $tertinggiValue . '</strong>' !!} buah. Sementara untuk produk yang terjual paling sedikit pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $terendahProduk . '</strong>' !!} dengan total penjualan masing - masing {!! '<strong>' . $terendahValue . '</strong>' !!} buah.
+    </h4> --}}
+
     <h4>
-        Dari grafik diatas dapat disimpulkan produk yang terjual paling banyak pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $tertinggi['nama_produk'] . '</strong>' !!} dengan total penjualan {!! '<strong>' . $tertinggi['jumlah'] . '</strong>' !!} buah. Sementara untuk produk yang terjual paling sedikit pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $terendah['nama_produk'] . '</strong>' !!} dengan total penjualan {!! '<strong>' . $terendah['jumlah'] . '</strong>' !!} buah.
+        Dari grafik diatas dapat disimpulkan produk yang terjual paling banyak pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $tertinggi . '</strong>' !!}. Sementara untuk produk yang terjual paling sedikit pada bulan {!!'<strong>' . $bulan . '</strong>' !!} tahun {!!'<strong>' . $tahun . '</strong>' !!} adalah {!! '<strong>' . $terendah . '</strong>' !!}.
     </h4>
 </div>
 <script>

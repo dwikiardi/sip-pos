@@ -103,25 +103,13 @@ class CartController extends Controller
     public function checkout(Request $request)
     {
         try {
-            // before discount
-            $totalBeforeDiscount = ($request->total*100)/(100-$request->discount);
-            $point = floor($totalBeforeDiscount/20000);
 
             $sale = Sale::create([
                 'transaction_code' => generateTransactionCode(),
-                'staff_id' => auth()->user()->staff->id,
-                'member_id' => $request->member_id == 'none' ? null : $request->member_id,
-                'discount' => $request->discount,
+                'user_id' => auth()->user()->id,
                 'total' => $request->total,
-                'sale_date' => date('Y-m-d H:i:s')
+                'sale_date' => $request->date ?? date('Y-m-d H:i:s')
             ]);
-
-            if($request->member_id != 'none') {
-                $member = Member::find($request->member_id);
-                $member->update([
-                    'point' => $member->point + $point
-                ]);
-            }
 
             foreach (cart() as $d) {
                 $produk = Product::find($d->id);

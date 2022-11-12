@@ -11,30 +11,6 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="text" class="form-control name" name="name" id="name" placeholder="masukkan nama">
-                    <div class="invalid-feedback error-name"></div>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Jenis Kelamin</label>
-                    <select name="gender" id="gender" class="form-control gender">
-                        <option value="">Pilih jenis kelamin...</option>
-                        <option value="1">Laki - Laki</option>
-                        <option value="0">Perempuan</option>
-                    </select>
-                    <div class="invalid-feedback error-gender"></div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">No. Telp</label>
-                    <input type="text" class="form-control phone" name="phone" id="phone" placeholder="masukkan no. telp">
-                    <div class="invalid-feedback error-phone"></div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Alamat</label>
-                    <textarea name="address" id="address" class="form-control address" rows="6"></textarea>
-                    <div class="invalid-feedback error-address"></div>
-                </div>
-                <div class="form-group">
                     <label for="user">Username</label>
                     <input type="text" class="form-control user" name="user" id="user" placeholder="masukkan username">
                     <div class="invalid-feedback error-user"></div>
@@ -46,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Foto</label>
-                    <input type="file" class="form-control image" name="image" id="image" placeholder="masukkan image">
+                    <input type="file" class="form-control image" name="image" id="image" placeholder="masukkan foto">
                     <div class="invalid-feedback error-image"></div>
                 </div>
                 <div class="form-group">

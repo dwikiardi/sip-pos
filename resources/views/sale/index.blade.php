@@ -100,46 +100,10 @@
                 </table>
             </div>
             <div class="card-footer block-hide" hidden>
-                <div class="row">
-                    <div class="col-6 text-start">
-                        <button class="btn btn-danger btn-remove-discount" type="button">
-                            <i class="fa fa-trash"></i> Hapus Diskon
-                        </button>
-                    </div>
-                    <div class="col-6 text-end">
-                        <div class="input-group mb-1"> 
-                            <input type="text" class="form-control" name="discount"> 
-                            <span class="input-group-text btn btn-primary btn-discount">Terapkan Diskon</span> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- member --}}
-    <div class="col-6 block-hide" hidden></div>
-    <div class="col-6 block-hide" hidden>
-        <div class="card d-block">
-            <div class="card-header">
-                <div class="card-title">Member</div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-borderless" id="tableMember">
-                        <tbody>
-                            <tr>
-                                <td class="text-start">Pilih Member</td>
-                                <td class="text-end member">
-                                    <select name="member_id" id="member_id" class="form-control select2-show-search ">
-                                        @foreach ($member as $key => $value)
-                                            <option value="{{$key}}">{{$value}}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="form-group">
+                    <label for="">Tanggal Transaksi</label>
+                    <input type="date" name="date" id="date" class="form-control date">
+                    <span class="text-small text-muted">*kosongkan jika tanggal transaksi menggunakan tanggal saat ini</span>
                 </div>
             </div>
         </div>
@@ -157,21 +121,14 @@
                     <table class="table table-borderless" id="tableTotalCart">
                         <tbody>
                             <tr>
-                                <td class="text-start">Sub Total</td>
-                                <td class="text-end sub-total">{{subTotal()}}</td>
+                                <td class="text-start">Total</td>
+                                <td class="text-end totalprice">{{subTotal()}}</td>
+                                {{-- <td class="text-end sub-total">{{subTotal()}}</td> --}}
                             </tr>
-                            <tr>
-                                <td class="text-start">Diskon</td>
-                                <td class="text-end total-discount">0%</td>
-                            </tr>
-                            <tr>
-                                <td class="text-start">Potongan</td>
-                                <td class="text-end price-cut">0</td>
-                            </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td class="text-start">Total Bayar</td>
-                                <td class="text-end total-price"></td>
-                            </tr>
+                                <td class="text-end totalprice">{{subTotal()}}</td>
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
