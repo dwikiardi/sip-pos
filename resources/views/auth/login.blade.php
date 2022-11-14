@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <link rel="icon"
-        href="{{asset('assets/images/logo.png')}}"
+        href="{{asset('assets/images/logo-sd.png')}}"
         type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet"
@@ -66,7 +66,7 @@
                 <div class="col-lg-5 col-md-7">
                     <div class="card bg-secondary border border-soft mb-0">
                         <div class="card-body px-lg-5 py-lg-5">
-                            <div class="text-center text-gray mb-4"><small><img src="{{asset('assets/images/logo.png')}}" height="70px"></small></div>
+                            <div class="text-center text-gray mb-4"><small><img src="{{asset('assets/images/logo-sd.png')}}" height="70px"></small></div>
                             {{--<div class="text-center text-gray mb-4"><small>Login Pengguna Sistem</small></div>--}}
                             <form role="form" action="{{route('login')}}" method="POST">
                                 @csrf

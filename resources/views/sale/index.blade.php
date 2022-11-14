@@ -122,13 +122,13 @@
                         <tbody>
                             <tr>
                                 <td class="text-start">Total</td>
-                                <td class="text-end totalprice">{{subTotal()}}</td>
-                                {{-- <td class="text-end sub-total">{{subTotal()}}</td> --}}
+                                {{-- <td class="text-end totalprice">{{subTotal()}}</td> --}}
+                                <td class="text-end sub-total">{{subTotal()}}</td>
                             </tr>
-                            {{-- <tr>
+                            <tr>
                                 <td class="text-start">Total Bayar</td>
-                                <td class="text-end totalprice">{{subTotal()}}</td>
-                            </tr> --}}
+                                <td class="text-end total-price">{{subTotal()}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -31,6 +31,11 @@
                     <div class="invalid-feedback error-price"></div>
                 </div>
                 <div class="form-group">
+                    <label for="sell-price">Harga Jual Produk</label>
+                    <input type="text" class="form-control sell_price" name="sell_price" id="sell-price" placeholder="masukkan harga jual produk" value="{{convertToRupiah($product->sell_price)}}">
+                    <div class="invalid-feedback error-sell_price"></div>
+                </div>
+                <div class="form-group">
                     <label for="image">Foto Produk</label>
                     <input type="file" class="form-control image" name="image" id="image">
                     <span class="text-muted text-small">*kosongkan jika tidak ingin mengganti foto</span>

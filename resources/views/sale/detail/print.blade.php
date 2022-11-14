@@ -16,7 +16,7 @@
         <div class="pull-left py-5">
             <address>
                 <p class="m-t-30">
-                    <img src="{{asset('assets/images/logo.png')}}" height="100">
+                    <img src="{{asset('assets/images/logo-sd.png')}}" height="100">
                 </p>
                 <p class="m-t-30">
                     <b>Dicetak oleh :</b>
@@ -52,11 +52,13 @@
                                     <tr>
                                         <th>Nama Produk</th>
                                         <th>Harga</th>
+                                        <th>Kuantitas</th>
                                     </tr>
                                     @foreach ($data->detail as $detail)
                                     <tr>
                                         <td>{{$detail->product->name}}</td>
-                                        <td>{{convertToRupiah($detail->product->price)}}</td>
+                                        <td>{{convertToRupiah($detail->product->sell_price)}}</td>
+                                        <td>{{$detail->quantity}}</td>
                                     </tr>
                                     @endforeach
                                 </table>

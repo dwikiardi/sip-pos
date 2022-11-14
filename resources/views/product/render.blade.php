@@ -14,7 +14,8 @@
             <thead>
                 <th>No</th>
                 <th>Nama Produk</th>
-                <th>Harga Produk</th>
+                <th>Harga Beli Produk</th>
+                <th>Harga Jual Produk</th>
                 <th>Foto</th>
                 <th>Stok</th>
                 @can('adminAndStaff')
@@ -27,6 +28,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{convertToRupiah($product->price)}}</td>
+                        <td>{{convertToRupiah($product->sell_price)}}</td>
                         <td>
                             <img src="{{asset($product->image)}}" width="70px">
                         </td>

@@ -25,9 +25,14 @@
                     <div class="invalid-feedback error-name"></div>
                 </div>
                 <div class="form-group">
-                    <label for="price">Harga Produk</label>
+                    <label for="price">Harga Beli Produk</label>
                     <input type="text" class="form-control price" name="price" id="price" placeholder="masukkan harga produk">
                     <div class="invalid-feedback error-price"></div>
+                </div>
+                <div class="form-group">
+                    <label for="sell-price">Harga Jual Produk</label>
+                    <input type="text" class="form-control sell_price" name="sell_price" id="sell-price" placeholder="masukkan harga jual produk">
+                    <div class="invalid-feedback error-sell_price"></div>
                 </div>
                 <div class="form-group">
                     <label for="image">Foto Produk</label>

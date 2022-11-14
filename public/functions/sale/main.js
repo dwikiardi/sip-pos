@@ -43,7 +43,8 @@ function totalPrice()
     let subtotal = retnum($('.sub-total').text());
     let totalDiscount = retnum($('.total-discount').text());
     
-    total = subtotal - (subtotal * (totalDiscount/100));
+    // total = subtotal - (subtotal * (totalDiscount/100));
+    total = subtotal;
 
     $('.total-price').text(convertToRupiah(total));
 }
@@ -87,7 +88,7 @@ $(document).ready(function () {
                     var tr_list = '<tr>' +
                                     '<td>' + '<img src="' + assets(value.image) + '" width=100px/>' + '</td>' +
                                     '<td>' + value.name + '</td>' +
-                                    '<td>' + convertToRupiah(value.price) + '</td>' +
+                                    '<td>' + convertToRupiah(value.sell_price) + '</td>' +
                                     '<td>' + (value.attribute != null ? value.attribute.stock : 0) + '</td>' +
                                     '<td>' + '<button type="button" class="btn btn-primary btn-add" data-id="'+ value.id +'"><i class="fa fa-plus"></i></button>' + '</td>' +
                                 '</tr>';
@@ -311,7 +312,7 @@ $(document).ready(function () {
             if (result.value) {
                 var formData = new FormData();
                 formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-                formData.append('total', $('body .totalprice').text().replace(/[^0-9]/g,''));
+                formData.append('total', $('body .total-price').text().replace(/[^0-9]/g,''));
                 formData.append('date', $('body .date').val());
                 $.ajax({
                     url: '/cart/checkout',

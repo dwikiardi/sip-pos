@@ -46,6 +46,7 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'category_id' => $request->category,
                 'price' => preg_replace('/[^0-9]/', '', $request->price),
+                'sell_price' => preg_replace('/[^0-9]/', '', $request->sell_price),
             ];
 
             if($request->hasFile('image')) {
@@ -67,6 +68,8 @@ class ProductController extends Controller
                 $img->save($save_path . '/' . $filenametostore);
 
                 $data['image'] = $save_path . '/' . $filenametostore;
+            } else {
+                $data['image'] = 'assets/images/blank.jpg';
             }
             Product::create($data);
 
@@ -105,6 +108,7 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'category_id' => $request->category,
                 'price' => preg_replace('/[^0-9]/', '', $request->price),
+                'sell_price' => preg_replace('/[^0-9]/', '', $request->sell_price),
             ];
 
             if($request->hasFile('image')) {

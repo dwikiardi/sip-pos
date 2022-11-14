@@ -28,11 +28,12 @@ class ProductRequest extends FormRequest
             'category' => 'required',
             'name' => 'required',
             'price' => 'required',
+            'sell_price' => 'required',
         ];
 
         if (!Request::instance()->has('id')) {
             $rules += [
-                'image' => 'required',
+                'image' => 'nullable',
                 'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'stock' => 'nullable',
             ];
@@ -62,7 +63,8 @@ class ProductRequest extends FormRequest
         return [
             'category' => 'Kategori',
             'name' => 'Nama produk',
-            'price' => 'Harga',
+            'price' => 'Harga Beli',
+            'sell_price' => 'Harga Jual',
             'image' => 'Foto',
             'stock' => 'Stok',
         ];

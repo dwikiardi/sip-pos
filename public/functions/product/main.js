@@ -50,6 +50,10 @@ $(document).ready(function () {
         $("#price").val(convertToRupiah($(this).val(), "Rp. "))
     });
 
+    $("body").on("keyup", '#sell-price', function (e) {
+        $("#sell-price").val(convertToRupiah($(this).val(), "Rp. "))
+    });
+
     // tambah kategori
     $('body').on('click', '.btn-add', function () {
         tambah();

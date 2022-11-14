@@ -2,9 +2,9 @@
     <div class="container-fluid main-container">
         <div class="d-flex"> <a aria-label="Hide Sidebar" class="app-sidebar__toggle"
                 data-bs-toggle="sidebar" href="javascript:void(0)"></a> <!-- sidebar-toggle--> <a
-                class="logo-horizontal " href="index.html"> <img src="{{asset('assets/images/logo.png')}}"
+                class="logo-horizontal " href="index.html"> <img src="{{asset('assets/images/logo-sd.png')}}"
                     class="header-brand-img desktop-logo" alt="logo"> <img
-                    src="{{asset('assets/images/logo.png')}}" class="header-brand-img light-logo1"
+                    src="{{asset('assets/images/logo-sd.png')}}" class="header-brand-img light-logo1"
                     alt="logo" style="width: 70px"> </a> <!-- LOGO -->
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
                 <button

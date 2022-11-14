@@ -2,10 +2,10 @@
     <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
     <div class="app-sidebar ps ps--active-y sidemenu-scroll">
         <div class="side-header"> <a class="header-brand1" href="{{route('dashboard.index')}}"> 
-            <img src="{{asset('assets/images/logo.png')}}" class="header-brand-img desktop-logo" alt="logo"> 
-            <img src="{{asset('assets/images/logo.png')}}" class="header-brand-img toggle-logo" alt="logo"> 
-            <img src="{{asset('assets/images/logo.png')}}" class="header-brand-img light-logo" alt="logo"> 
-            <img src="{{asset('assets/images/logo.png')}}"
+            <img src="{{asset('assets/images/logo-sd.png')}}" class="header-brand-img desktop-logo" alt="logo"> 
+            <img src="{{asset('assets/images/logo-sd.png')}}" class="header-brand-img toggle-logo" alt="logo"> 
+            <img src="{{asset('assets/images/logo-sd.png')}}" class="header-brand-img light-logo" alt="logo"> 
+            <img src="{{asset('assets/images/logo-sd.png')}}"
             class="header-brand-img light-logo1" style="width: 70px" alt="logo"> </a> <!-- LOGO -->
         </div>
         <div class="main-sidemenu">

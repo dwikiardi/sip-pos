@@ -35,7 +35,7 @@ class CartController extends Controller
                     \Cart::session($user_id)->add([
                         'id' => $product->id,
                         'name' => $product->name,
-                        'price' => $product->price,
+                        'price' => $product->sell_price,
                         'quantity' => 1,
                         // 'quantity' => $request->jumlah,
                         'associatedModel' => $product,
