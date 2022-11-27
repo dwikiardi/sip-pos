@@ -16,6 +16,11 @@
         $('body .render').html('<div class="alert alert-danger text-center">Tidak ada data pada bulan ini</div>');
     @endif
 
+    // laba
+    $('.laba-card').prop('hidden', false)
+    $('.laba-total').text('{{$laba}}')
+    $('.laba-bulan').text('{{$bulan}} {{$tahun}}')
+
     $('body .chart-title').html('Chart Produk {{$bulan}} {{$tahun}}');
 
     var label = [];

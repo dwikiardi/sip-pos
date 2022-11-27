@@ -34,6 +34,27 @@
                 </div>
             </div>
             @endforeach
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xl-2 laba-card" hidden>
+                <div class="card overflow-hidden">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="mt-2">
+                                <h6 class="">Laba</h6>
+                                <h2 class="mb-0 number-font laba-total">0</h2>
+                            </div>
+                        </div>
+                        {{-- <a href="#"> --}}
+                            <span class="text-muted fs-12">
+                                <span class="text-secondary">
+                                    <i class="fe fe-arrow-right-circle text-secondary"></i> <span class="laba-bulan">-</span>
+                                </span>
+                            </span>
+                        {{-- </a> --}}
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="card">
@@ -82,6 +103,7 @@
         function renderChart(bulan, tahun, filter) {
             $('.render').empty()
             if(bulan == '' || tahun == '' || filter == ''){
+                $('.laba-card').prop('hidden', true)
                 $('.render').html('<div class="text-center"><h4>Tidak ada data</h4></div>')
                 Swal.fire({
                     icon: 'warning',

@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $chart = array();
         if($request->filter == 'product') {
             $data = DB::table('products')
-                    ->select('products.id', 'products.name', DB::raw('SUM(sale_details.quantity) as quantity'))
+                    ->select('products.id', 'products.name', 'products.sell_price', 'products.price', DB::raw('SUM(sale_details.quantity) as quantity'))
                     ->leftJoin('sale_details', 'products.id', '=', 'sale_details.product_id')
                     ->leftJoin('sales', 'sale_details.sale_id', '=', 'sales.id')
                     ->whereMonth('sales.sale_date', $request->bulan)
@@ -53,6 +53,11 @@ class DashboardController extends Controller
             array_push($tertinggi, $chart[$maxVal[$i]]['nama_produk'] . ' ' . $chart[$maxVal[$i]]['jumlah'] . ' buah');
         }
 
+        $laba = 0;
+        foreach($data as $d) {
+            $laba = $laba + ($d->quantity * ($d->sell_price - $d->price));
+        }
+
         $view = [
             'data' => view('dashboard.chart.index')->with([
                 'bulan' => bulan()[$request->bulan-1],
@@ -63,9 +68,9 @@ class DashboardController extends Controller
                 'tertinggiValue' => str_replace(' ', ', ', implode(" ", $tertinggiValue)),
                 'terendahProduk' => str_replace(',', ', ', str_replace(['["', '"]', '"'], '', json_encode($terendahProduk))),
                 'terendahValue' => str_replace(' ', ', ', implode(" ", $terendahValue)),
-                
                 'tertinggi' => str_replace(',', ', ', str_replace(['["', '"]', '"'], '', json_encode($tertinggi))),
-                'terendah' => str_replace(',', ', ', str_replace(['["', '"]', '"'], '', json_encode($terendah)))
+                'terendah' => str_replace(',', ', ', str_replace(['["', '"]', '"'], '', json_encode($terendah))),
+                'laba' => convertToRupiah($laba)
             ])->render()
         ];
 
