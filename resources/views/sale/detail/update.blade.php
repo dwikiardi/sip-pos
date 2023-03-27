@@ -5,6 +5,7 @@
         <th>Staff</th>
         <th>Total</th>
         <th>Tanggal Transaksi</th>
+        <th>Aksi</th>
     </thead>
     <tbody>
         @foreach ($data as $data)
@@ -14,6 +15,11 @@
                 <td>{{$data->user->username}}</td>
                 <td>{{convertToRupiah($data->total)}}</td>
                 <td>{{$data->sale_date}}</td>
+                <td>
+                    <button class="btn btn-danger btn-delete" data-id="{{$data->id}}">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
             </tr>
         @endforeach
     </tbody>

@@ -57,4 +57,23 @@ class SaleController extends Controller
 
         return response()->json($view);
     }
+
+    public function delete($id)
+    {
+        try {
+            $sale = Sale::find($id);
+            $product->delete();
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Data berhasil dihapus',
+                'title' => 'Berhasil'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+                'title' => 'Gagal'
+            ]);
+        }
+    }
 }

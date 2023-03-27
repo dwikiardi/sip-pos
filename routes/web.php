@@ -55,6 +55,7 @@ Route::middleware('auth')->namespace('Main')->group(function() {
         Route::get('/', 'SaleController@index')->name('index');
         Route::get('/search-product/{slug}', 'SaleController@search')->name('search');
         Route::get('/print/{start_date}/{end_date}', 'SaleController@print')->name('print');
+        Route::get('/delete/{id}', 'SaleController@delete')->name('delete');
 
         // detail
         Route::get('/detail', 'SaleController@detail')->name('detail');
