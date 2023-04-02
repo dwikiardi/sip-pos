@@ -62,7 +62,7 @@ class SaleController extends Controller
     {
         try {
             $sale = Sale::find($id);
-            $product->delete();
+            $sale->delete();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data berhasil dihapus',

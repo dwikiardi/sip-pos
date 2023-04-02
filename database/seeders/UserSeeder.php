@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => $role->id,
             'username' => 'admin',
-            'password' => bcrypt('4dm1n@k1nt4m4n1'),
+            'password' => bcrypt('admin1234'),
             'image' => 'assets/media/users/default.png'
         ]);
     }
